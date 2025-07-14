@@ -1,6 +1,7 @@
 import express from 'express'
 import connectDB from './config/db.js'
 import userApi from './routes/api/users.js'
+import authApi from './routes/api/auth.js'
 
 // const path = require('path')
 
@@ -11,7 +12,7 @@ connectDB()
 app.use(express.json())
 
 app.use('/api/users', userApi)
-// app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/auth', authApi)
 // app.use('/api/profile', require('./routes/api/profile'))
 // app.use('/api/posts', require('./routes/api/posts'))
 
